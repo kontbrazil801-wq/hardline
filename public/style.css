@@ -1,0 +1,578 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 15px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f0f0f0;
+
+    color: #202124;
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* ==================================================
+   BACKGROUND - ALL PAGES
+================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    top: -25px;
+    left: -25px;
+    right: -25px;
+    bottom: -25px;
+
+    background-image:
+        url("https://cdn.discordapp.com/attachments/1519115181366579420/1541770265657090068/ChatGPT_Image_12_aout_2026_06_12_19.png?ex=6a92c174&is=6a916ff4&hm=6b1fd3a3eca9a4ec3315e9f29023e9329c1569f2551e598f0a5bf46a73af4083&");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    filter: blur(7px);
+
+    transform: scale(1.04);
+
+    opacity: 0.45;
+
+    z-index: -2;
+}
+
+
+/* ==================================================
+   DARK OVERLAY
+================================================== */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.42);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   FORM WRAPPER - CENTER
+================================================== */
+
+.form-wrapper {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    min-height:
+        calc(100vh - 80px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   FORM CARD
+================================================== */
+
+.form-card {
+    width: 100%;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border-radius: 8px;
+
+    padding: 30px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.20);
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   TOP LINE
+================================================== */
+
+.top-line {
+    height: 8px;
+
+    background: #673ab7;
+
+    border-radius:
+        8px 8px 0 0;
+
+    margin:
+        -30px -30px 25px -30px;
+}
+
+
+/* ==================================================
+   SERVER LOGO
+================================================== */
+
+.server-logo {
+    width: 140px;
+
+    height: 140px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    display: block;
+
+    margin:
+        10px auto 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==================================================
+   TITLE
+================================================== */
+
+h1 {
+    margin:
+        0 0 10px;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   PAGE TITLE
+================================================== */
+
+.page-title {
+    text-align: center;
+
+    color: #673ab7;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+.description {
+    text-align: center;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    margin:
+        12px auto 10px;
+
+    max-width: 650px;
+}
+
+
+.small-description {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+    color: #5f6368;
+
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   QUESTIONS
+================================================== */
+
+.question {
+    margin-bottom: 35px;
+
+    text-align: left;
+}
+
+
+.question > label:first-child {
+    display: block;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+
+.question > label:first-child span {
+    color: #d93025;
+}
+
+
+/* ==================================================
+   INPUTS
+================================================== */
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+
+    border: none;
+
+    border-bottom:
+        1px solid #777;
+
+    padding:
+        12px 4px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    background: transparent;
+
+    transition:
+        border-color .2s;
+}
+
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-bottom:
+        2px solid #673ab7;
+}
+
+
+textarea {
+    min-height: 100px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+.large-textarea {
+    min-height: 180px;
+}
+
+
+/* ==================================================
+   HELP TEXT
+================================================== */
+
+.help-text {
+    color: #5f6368;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin:
+        0 0 15px;
+}
+
+
+/* ==================================================
+   RADIO
+================================================== */
+
+.radio-option {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin:
+        13px 0;
+
+    font-size: 15px !important;
+
+    font-weight: 400 !important;
+}
+
+
+.radio-option input {
+    width: 18px;
+
+    height: 18px;
+
+    accent-color: #673ab7;
+}
+
+
+/* ==================================================
+   SITUATION
+================================================== */
+
+.situation {
+    background: #f8f9fa;
+
+    border:
+        1px solid #dadce0;
+
+    border-radius: 5px;
+
+    padding: 18px;
+
+    line-height: 1.7;
+
+    white-space: pre-line;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+
+    text-align: left;
+}
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+.navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 40px;
+}
+
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.next-button,
+.submit-button,
+.discord-button,
+.back-button {
+    border: none;
+
+    border-radius: 4px;
+
+    padding:
+        11px 22px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-block;
+}
+
+
+.next-button,
+.submit-button {
+    background: #673ab7;
+
+    color: white;
+}
+
+
+.next-button:hover,
+.submit-button:hover {
+    background: #5630a0;
+}
+
+
+.back-button {
+    background: transparent;
+
+    color: #673ab7;
+
+    border:
+        1px solid #dadce0;
+}
+
+
+.discord-button {
+    background: #5865f2;
+
+    color: white;
+
+    margin: 0;
+
+    padding:
+        12px 28px;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+
+.discord-button:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(
+            88,
+            101,
+            242,
+            0.35
+        );
+}
+
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+
+button:disabled {
+    opacity: .6;
+
+    cursor: not-allowed;
+}
+
+
+/* ==================================================
+   SUCCESS
+================================================== */
+
+.success-card {
+    text-align: center;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding:
+            15px 8px;
+    }
+
+
+    .form-wrapper {
+        min-height:
+            calc(100vh - 30px);
+    }
+
+
+    .form-card {
+        padding: 22px;
+    }
+
+
+    .top-line {
+        margin:
+            -22px -22px 25px -22px;
+    }
+
+
+    h1 {
+        font-size: 24px;
+    }
+
+
+    .page-title {
+        font-size: 14px;
+    }
+
+
+    .description {
+        font-size: 16px;
+    }
+
+
+    .small-description {
+        font-size: 14px;
+    }
+
+
+    .navigation {
+        gap: 15px;
+    }
+
+
+    .server-logo {
+        width: 115px;
+
+        height: 115px;
+    }
+
+}

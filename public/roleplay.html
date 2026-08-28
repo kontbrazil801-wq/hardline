@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Hardline RolePlay — Roleplay</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="form-wrapper">
+
+<div class="form-card">
+
+<div class="top-line"></div>
+
+<h1>Hardline RolePlay</h1>
+
+<p class="page-title">
+Roleplay Knowledge — 2 / 4
+</p>
+
+
+<form id="page3Form">
+
+
+<div class="question">
+
+<label>
+Question 9 : What Is Your Definition Of Mass RP
+& Give 2 Examples :
+<span>*</span>
+</label>
+
+<textarea
+    id="massRp"
+    class="large-textarea"
+    required
+></textarea>
+
+</div>
+
+
+<div class="question">
+
+<label>
+Question 10 : What is Your Definition Of Fail RP
+& Give 2 Examples :
+<span>*</span>
+</label>
+
+<textarea
+    id="failRp"
+    class="large-textarea"
+    required
+></textarea>
+
+</div>
+
+
+<div class="question">
+
+<label>
+Question 11 : What Is Your Definition Of Coherence RP
+& Give 2 Examples :
+<span>*</span>
+</label>
+
+<textarea
+    id="coherenceRp"
+    class="large-textarea"
+    required
+></textarea>
+
+</div>
+
+
+<div class="question">
+
+<label>
+Question 12 : What Is Your Definition of Combat Storing
+& give 2 Examples :
+<span>*</span>
+</label>
+
+<textarea
+    id="combatStoring"
+    class="large-textarea"
+    required
+></textarea>
+
+</div>
+
+
+<div class="navigation">
+
+<button
+    type="button"
+    class="back-button"
+    onclick="goBack()"
+>
+Back
+</button>
+
+
+<button
+    type="submit"
+    class="next-button"
+>
+Next
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+
+<script>
+
+const saved =
+    JSON.parse(
+        sessionStorage.getItem(
+            "hardlineApplication"
+        ) || "{}"
+    );
+
+
+if (!saved.realName) {
+
+    window.location.href =
+        "questions.html";
+
+}
+
+
+document
+.getElementById("page3Form")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    saved.massRp =
+        document.getElementById("massRp").value;
+
+    saved.failRp =
+        document.getElementById("failRp").value;
+
+    saved.coherenceRp =
+        document.getElementById("coherenceRp").value;
+
+    saved.combatStoring =
+        document.getElementById("combatStoring").value;
+
+
+    sessionStorage.setItem(
+        "hardlineApplication",
+        JSON.stringify(saved)
+    );
+
+
+    window.location.href =
+        "situations.html";
+
+});
+
+
+function goBack() {
+
+    window.location.href =
+        "questions.html";
+
+}
+
+</script>
+
+</body>
+</html>

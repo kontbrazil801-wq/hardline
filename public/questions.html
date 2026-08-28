@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Hardline RolePlay — Questions</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="form-wrapper">
+
+<div class="form-card">
+
+<div class="top-line"></div>
+
+<h1>Hardline RolePlay</h1>
+
+<p class="page-title">
+Questions — 1 / 4
+</p>
+
+
+<form id="page2Form">
+
+
+<!-- Question 1 -->
+
+<div class="question">
+
+<label>
+Question 1 : Real Life Name :
+<span>*</span>
+</label>
+
+<input
+    type="text"
+    id="realName"
+    required
+>
+
+</div>
+
+
+<!-- Question 2 -->
+
+<div class="question">
+
+<label>
+Question 2 : Real Life Age :
+<span>*</span>
+</label>
+
+<input
+    type="number"
+    id="realAge"
+    min="13"
+    max="100"
+    required
+>
+
+</div>
+
+
+<!-- Discord Username -->
+
+<div class="question">
+
+<label>
+Your Discord username (Exp NAME#1234)
+<span>*</span>
+</label>
+
+<input
+    type="text"
+    id="discordUsername"
+    required
+>
+
+</div>
+
+
+<!-- Discord ID -->
+
+<div class="question">
+
+<label>
+Your Discord ID (Exp : 705158583934910514)
+<span>*</span>
+</label>
+
+<p class="help-text">
+To Know Your Discord ID lazmek t7el Mode Développeur mel paramètres
+w Ba3ed tenzel 3la Esmek B Clique Gauche W tal9a wahed fi le5ir
+« Copier L’identifiant / Copy ID »
+</p>
+
+<input
+    type="text"
+    id="discordId"
+    required
+>
+
+</div>
+
+
+<!-- Question 3 -->
+
+<div class="question">
+
+<label>
+Question 3 : How Did You Know Our Server ?
+<span>*</span>
+</label>
+
+<textarea
+    id="howKnow"
+    required
+></textarea>
+
+</div>
+
+
+<!-- Question 4 -->
+
+<div class="question">
+
+<label>
+Question 4 : Have you ever played in other servers Before?
+If Yes Mention The Server Name.
+<span>*</span>
+</label>
+
+<textarea
+    id="otherServers"
+    required
+></textarea>
+
+</div>
+
+
+<!-- Question 5 -->
+
+<div class="question">
+
+<label>
+Question 5 : What Is Your Definition Of Roleplay :
+<span>*</span>
+</label>
+
+<textarea
+    id="roleplayDefinition"
+    required
+></textarea>
+
+</div>
+
+
+<!-- Question 6 -->
+
+<div class="question">
+
+<label>
+Question 6 : Character's name
+(Realistic Name, No Trolling) :
+<span>*</span>
+</label>
+
+<input
+    type="text"
+    id="characterName"
+    required
+>
+
+</div>
+
+
+<!-- Question 7 -->
+
+<div class="question">
+
+<label>
+Question 7 : Character's type :
+<span>*</span>
+</label>
+
+
+<label class="radio-option">
+
+<input
+    type="radio"
+    name="characterType"
+    value="LEGAL"
+    required
+>
+
+LEGAL
+
+</label>
+
+
+<label class="radio-option">
+
+<input
+    type="radio"
+    name="characterType"
+    value="ILLEGAL"
+>
+
+ILLEGAL
+
+</label>
+
+</div>
+
+
+<!-- Question 8 -->
+
+<div class="question">
+
+<label>
+Question 8 : Your character's backstory and objectives :
+(Be Creative)
+<span>*</span>
+</label>
+
+<textarea
+    id="backstory"
+    class="large-textarea"
+    required
+></textarea>
+
+</div>
+
+
+<div class="navigation">
+
+<button
+    type="button"
+    class="back-button"
+    onclick="location.href='index.html'"
+>
+Back
+</button>
+
+
+<button
+    type="submit"
+    class="next-button"
+>
+Next
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+
+<script>
+
+document
+.getElementById("page2Form")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const characterType =
+        document.querySelector(
+            'input[name="characterType"]:checked'
+        );
+
+
+    const application = {
+
+        realName:
+            document.getElementById("realName").value,
+
+        realAge:
+            document.getElementById("realAge").value,
+
+        discordUsername:
+            document.getElementById("discordUsername").value,
+
+        discordId:
+            document.getElementById("discordId").value,
+
+        howKnow:
+            document.getElementById("howKnow").value,
+
+        otherServers:
+            document.getElementById("otherServers").value,
+
+        roleplayDefinition:
+            document.getElementById("roleplayDefinition").value,
+
+        characterName:
+            document.getElementById("characterName").value,
+
+        characterType:
+            characterType.value,
+
+        backstory:
+            document.getElementById("backstory").value
+
+    };
+
+
+    sessionStorage.setItem(
+        "hardlineApplication",
+        JSON.stringify(application)
+    );
+
+
+    window.location.href =
+        "roleplay.html";
+
+});
+
+</script>
+
+</body>
+</html>
